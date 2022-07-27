@@ -1,16 +1,12 @@
 import React, { useState, useEffect  } from 'react';
 import { Button, Container, Form, FormGroup, Input, Label } from 'reactstrap';
 import { Link, useNavigate, useParams  } from 'react-router-dom';
-import AppNavbar from './AppNavbar.js';
 import withLocation from './withLocation';
 
 const ClientEdit = () => {
     const navigate = useNavigate();
     const params = useParams();
-    const [item, setItem] = useState({
-                                           name: '',
-                                           email: ''
-                                        });
+    const [item, setItem] = useState({ name: '', email: ''});
     useEffect( () =>{
         console.log(params);
         async function fetchData() {
@@ -32,7 +28,6 @@ const ClientEdit = () => {
     }
 
     const handleSubmit = async (event) => {
-         // const navigate = useNavigate();
           event.preventDefault();
           console.log(item);
           console.log(event);
